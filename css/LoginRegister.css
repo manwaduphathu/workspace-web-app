@@ -1,1 +1,225 @@
-/*style fir login and register page*/
+/* 🔹 Base Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../assets/login-bg.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+/* 🔹 Container for Login/Register */
+.login-container,
+.registration-container {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  color: #f2f2f2;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* 🔹 Logo and Headers */
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.login-header h1,
+.registration-header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.login-header p,
+.registration-header p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* 🔹 Forms */
+.login-form,
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  outline: none;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+small.hint {
+  font-size: 0.75rem;
+  color: #bbb;
+}
+
+/* 🔹 Two-column form row (first & last name) */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* 🔹 Password Toggle */
+.password-input {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ccc;
+}
+
+/* 🔹 Buttons */
+.btn-login,
+.btn-register,
+.btn-google-login,
+.btn-google-register {
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.btn-login,
+.btn-register {
+  background-color: #3498DB;
+  color: #fff;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+  background-color: #2980B9;
+}
+
+
+
+/* 🔹 Extra Form Options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.form-options a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.form-options a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Checkbox & Terms */
+.terms-group {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.terms-group a {
+  color: #3498DB;
+  text-decoration: none;
+}
+
+/* 🔹 Divider */
+.divider {
+  text-align: center;
+  margin: 15px 0;
+  color: #bbb;
+}
+
+.divider span {
+  background: rgba(30, 30, 30, 0.6);
+  padding: 0 10px;
+}
+
+/* 🔹 Register/Login Prompt */
+.register-prompt,
+.login-prompt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.register-prompt a,
+.login-prompt a {
+  color: #3498DB;
+  text-decoration: none;
+}
+
+.register-prompt a:hover,
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Footer */
+.login-footer,
+.registration-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 30px;
+  color: #ccc;
+}
+
+.legal-links a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
