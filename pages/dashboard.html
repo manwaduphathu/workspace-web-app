@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Workspace</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for statistics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Side Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="assets/workspace-logo.png" alt="Workspace Logo" class="logo">
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                            <span class="badge">5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clock-in-out.html">
+                            <i class="fas fa-clock"></i>
+                            <span>Time Tracking</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tools.html">
+                            <i class="fas fa-tools"></i>
+                            <span>Tools</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="assets/user-avatar.jpg" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="username">John Doe</span>
+                    <a href="index.html" class="logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Welcome back, <span id="userName">John</span>!</h1>
+                <div class="current-time" id="currentDateTime">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </header>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <a href="clock-in-out.html" class="action-card clock-in">
+                    <i class="fas fa-clock"></i>
+                    <span>Clock In/Out</span>
+                </a>
+                <a href="tasks.html?new=true" class="action-card add-task">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Task</span>
+                </a>
+                <a href="tools.html" class="action-card tools">
+                    <i class="fas fa-tools"></i>
+                    <span>Quick Tools</span>
+                </a>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon hours-worked">
+                        <i class="fas fa-business-time"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="hoursWorked">32.5</span>
+                        <span class="stat-label">Hours Worked</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon tasks-completed">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="tasksCompleted">12</span>
+                        <span class="stat-label">Tasks Completed</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon current-project">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="currentProject">XYZ</span>
+                        <span class="stat-label">Current Project</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon productivity">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="productivityScore">84%</span>
+                        <span class="stat-label">Productivity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Activity Sections -->
+            <div class="content-row">
+                <section class="chart-section">
+                    <h2>Weekly Hours</h2>
+                    <div class="chart-container">
+                        <canvas id="hoursChart"></canvas>
+                    </div>
+                </section>
+                
+                <section class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <ul class="activity-list">
+                        <li>
+                            <i class="fas fa-clock activity-icon clock-out"></i>
+                            <div class="activity-details">
+                                <span class="activity-title">Clocked out</span>
+                                <span class="activity-time">Today at 5:30 PM</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle activity-icon task-complete"></i>
+                            <div class="activity-details">
+                                <span class="activity-title">Completed task: ABC</span>
+                                <span class="activity-time">Today at 4:45 PM</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-tools activity-icon tool-added"></i>
+                            <div class="activity-details">
+                                <span class="activity-title">Added new tool</span>
+                                <span class="activity-time">Yesterday at 2:30 PM</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-comment activity-icon note-added"></i>
+                            <div class="activity-details">
+                                <span class="activity-title">Added project note</span>
+                                <span class="activity-time">Yesterday at 11:15 AM</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="activity.html" class="view-all">View All Activity</a>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

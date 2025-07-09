@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | Workspace</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/tasks.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flatpickr for date input -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="task-manager-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="assets/workspace-logo.png" alt="Workspace Logo" class="logo">
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                            <span class="badge" id="taskCounter">5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clock-in-out.html">
+                            <i class="fas fa-clock"></i>
+                            <span>Time Tracking</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tools.html">
+                            <i class="fas fa-tools"></i>
+                            <span>Tools</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="task-content">
+            <header class="task-header">
+                <h1>Task Manager</h1>
+                <div class="task-actions">
+                    <button id="toggleTaskForm" class="btn-primary">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+                    <div class="task-filters">
+                        <select id="filterPriority">
+                            <option value="all">All Priorities</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                        <select id="filterStatus">
+                            <option value="all">All Tasks</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="overdue">Overdue</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Task List -->
+            <div class="task-list">
+                <div class="task-card high-priority">
+                    <div class="task-checkbox">
+                        <input type="checkbox" id="task1" class="task-status">
+                        <label for="task1"></label>
+                    </div>
+                    <div class="task-details">
+                        <h3 class="task-title">Design homepage mockup</h3>
+                        <p class="task-description">Create responsive design for all screen sizes</p>
+                        <div class="task-meta">
+                            <span class="task-due">
+                                <i class="fas fa-calendar-alt"></i> Due: <strong>Today</strong>
+                            </span>
+                            <span class="task-priority high">
+                                <i class="fas fa-exclamation-circle"></i> High Priority
+                            </span>
+                        </div>
+                    </div>
+                    <div class="task-actions">
+                        <button class="btn-edit" data-task-id="1">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-delete" data-task-id="1">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="task-card medium-priority">
+                    <div class="task-checkbox">
+                        <input type="checkbox" id="task2" class="task-status" checked>
+                        <label for="task2"></label>
+                    </div>
+                    <div class="task-details">
+                        <h3 class="task-title">Implement login system</h3>
+                        <p class="task-description">Create authentication flow with JWT</p>
+                        <div class="task-meta">
+                            <span class="task-due">
+                                <i class="fas fa-calendar-alt"></i> Due: <strong>Jun 15</strong>
+                            </span>
+                            <span class="task-priority medium">
+                                <i class="fas fa-info-circle"></i> Medium Priority
+                            </span>
+                        </div>
+                    </div>
+                    <div class="task-actions">
+                        <button class="btn-edit" data-task-id="2">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-delete" data-task-id="2">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Task Form (Initially Hidden) -->
+            <div class="add-task-form" id="taskForm">
+                <h2>Add New Task</h2>
+                <form id="taskFormElement" action="backend/tasks.php" method="POST">
+                    <div class="form-group">
+                        <label for="taskTitle">Title*</label>
+                        <input type="text" id="taskTitle" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDescription">Description</label>
+                        <textarea id="taskDescription" name="description" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="taskDueDate">Due Date*</label>
+                            <input type="text" id="taskDueDate" name="dueDate" class="datepicker" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskPriority">Priority*</label>
+                            <select id="taskPriority" name="priority" required>
+                                <option value="high">High</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Task</button>
+                        <button type="button" id="cancelTaskForm" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- JavaScript Files -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/tasks.js"></script>
+</body>
+</html>

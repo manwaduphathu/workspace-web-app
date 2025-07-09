@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools | Workspace</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Workspace</div>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="clock-in-out.html">Time Tracking</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="tools.html" class="active">Tools</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tools-container">
+        <div class="tools-tabs">
+            <button class="tab active">All Tools</button>
+            <button class="tab">Favorites</button>
+            <button class="tab">Categories ▼</button>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search tools..." id="tool-search">
+            <button class="btn-search">Search</button>
+        </div>
+        
+        <div class="tool-categories">
+            <div class="category">
+                <h3>Most Used</h3>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">⏱️</div>
+                        <h4>Time Tracker</h4>
+                        <p>Track your work hours</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">✅</div>
+                        <h4>Task Manager</h4>
+                        <p>Organize your tasks</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">📁</div>
+                        <h4>File Share</h4>
+                        <p>Share files with team</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">📝</div>
+                        <h4>Notes</h4>
+                        <p>Take quick notes</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>Featured Tools</h3>
+                <div class="featured-tool">
+                    <div class="featured-content">
+                        <h4>Project Timeline Generator</h4>
+                        <p>Create visual timelines for your projects with ease. Plan milestones and track progress.</p>
+                        <button class="btn-use-tool">Use Tool</button>
+                    </div>
+                    <div class="featured-image">
+                        <img src="assets/timeline-preview.jpg" alt="Timeline Generator Preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

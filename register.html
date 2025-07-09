@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Workspace</title>
+</head>
+<body>
+    <div class="registration-container">
+        <header class="registration-header">
+            <a href="index.html" class="logo-link">
+               <h1 class="logo">WORKSPACE</h1>
+            </a>
+            <h1>Create Your Account</h1>
+            <p>Join thousands of professionals managing their work efficiently</p>
+        </header>
+
+        <main class="registration-main">
+            <form action="backend/register.php" method="POST" class="registration-form" id="registrationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            name="firstName" 
+                            placeholder="Enter your first name"
+                            required
+                            minlength="2"
+                            pattern="[A-Za-z]+"
+                            title="Letters only, no spaces or special characters"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            name="lastName" 
+                            placeholder="Enter your last name"
+                            required
+                            minlength="2"
+                            pattern="[A-Za-z]+"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                        autocomplete="email"
+                    >
+                    <small class="hint">We'll never share your email</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Job Role</label>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="manager">Manager</option>
+                        <option value="administrator">Administrator</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group password-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Create password (min 8 characters)"
+                            required
+                            minlength="8"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+                            title="Must contain at least one uppercase, one lowercase, and one number"
+                        >
+                        <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                    </div>
+                    <div class="password-strength" id="passwordStrength"></div>
+                    <small class="hint">
+                        Use 8+ characters with a mix of letters, numbers & symbols
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input">
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="Retype your password"
+                            required
+                        >
+                        <i class="fas fa-eye password-toggle" id="toggleConfirmPassword"></i>
+                    </div>
+                    <small id="passwordMatchMessage"></small>
+                </div>
+
+                <div class="form-group terms-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="terms.html">Terms of Service</a> and 
+                        <a href="privacy.html">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-register" id="registerButton">
+                    Create Account
+                </button>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <button type="button" class="btn-google-register">
+                    <img src="assets/google-icon.png" alt="Google logo">
+                    Sign up with Google
+                </button>
+            </form>
+
+            <div class="login-prompt">
+                Already have an account? <a href="login.html">Log in</a>
+            </div>
+        </main>
+
+        <footer class="registration-footer">
+            <p>&copy; 2025 Workspace. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="security.html">Security</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript files -->
+</body>
+</html>

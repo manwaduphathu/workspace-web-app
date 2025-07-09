@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracking | Workspace</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Workspace</div>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="clock-in-out.html" class="active">Time Tracking</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="clock-container">
+        <h1>Time Tracking</h1>
+        
+        <div class="clock-status">
+            <p>Current Status: <span id="status">CLOCKED OUT</span></p>
+        </div>
+        
+        <div class="clock-display">
+            <div class="time" id="current-time">08:45 AM</div>
+            <button id="clock-btn" class="btn-clock">CLOCK IN</button>
+        </div>
+        
+        <div class="summary">
+            <h3>Today's Summary</h3>
+            <ul>
+                <li>Clocked In: <span id="clock-in-time">9:00 AM</span></li>
+                <li>Clocked Out: <span id="clock-out-time">5:30 PM</span></li>
+                <li>Total: <span id="total-hours">8.5 hours</span></li>
+            </ul>
+        </div>
+        
+        <div class="weekly-overview">
+            <h3>Weekly Overview</h3>
+            <div class="chart-placeholder">
+                <!-- This would be replaced with a real chart in production -->
+                <p>Weekly hours chart would display here</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/clock.js"></script>
+</body>
+</html>

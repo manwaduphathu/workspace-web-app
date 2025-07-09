@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Workspace</title>
+ 
+</head>
+<body>
+    <div class="login-container">
+        <header class="login-header">
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">WORKSPACE</h1>
+            </a>
+            <h1>Welcome Back to Workspace</h1>
+            <p>Please login to access your dashboard</p>
+        </header>
+
+        <main class="login-main">
+            <form action="backend/login.php" method="POST" class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email" autocomplete="username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password" autocomplete="current-password" minlength="8">
+                    <span class="password-toggle" id="togglePassword">👁️</span>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn-login">Login</button>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <button type="button" class="btn-google-login">
+                    <img src="assets/google-icon.png" alt="Google logo">
+                    Continue with Google
+                </button>
+            </form>
+            
+            <div class="register-prompt">
+                <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            </div>
+        </main>
+        
+        <footer class="login-footer">
+            <p>&copy; 2025 Workspace. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Link to your JavaScript files -->
+</body>
+</html>
