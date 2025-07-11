@@ -8,48 +8,19 @@
 </head>
 <body>
     <div class="task-manager-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo-container">
-                <img src="assets/workspace-logo.png" alt="Workspace Logo" class="logo">
-            </div>
-            
-            <nav class="main-nav">
+        <header>
+            <nav>
+                <div class="logo">Workspace</div>
                 <ul>
-                    <li>
-                        <a href="dashboard.html">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="tasks.html">
-                            <i class="fas fa-tasks"></i>
-                            <span>Tasks</span>
-                            <span class="badge" id="taskCounter">5</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="clock-in-out.html">
-                            <i class="fas fa-clock"></i>
-                            <span>Time Tracking</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tools.html">
-                            <i class="fas fa-tools"></i>
-                            <span>Tools</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="profile.html">
-                            <i class="fas fa-user"></i>
-                            <span>Profile</span>
-                        </a>
-                    </li>
+                    <li><a href="../pages/dashboard.html">Dashboard</a></li>
+                    <li><a href="../pages/clock-in-out.html">Time Tracking</a></li>
+                    <li><a href="../pages/task.html">Tasks</a></li>
+                    <li><a href="../pages/tools.html" class="active">Tools</a></li>
+                    <li><a href="../pages/profile.html">Profile</a></li>
+                    <li><a href="../index.html">Logout</a></li>
                 </ul>
             </nav>
-        </aside>
+        </header>
 
         <!-- Main Content -->
         <main class="task-content">
